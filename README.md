@@ -10,17 +10,17 @@ With this NinjaCat's Game, users will be able to:
 
 Start, pause, and reset the game board Type in the words to get the score In addition, this project will include:
 
-*An About modal describing the background and rules of the game 
-*A production README Wireframes Homepage Nav links include links to this project's Github repo, my LinkedIn and AngelList, and the About modal. Game controls will include Start, Pause buttons. 
-*On the bottom right, there will be buttons used to choose game level. On the left, there will be a 30s timer (Bonus) On the bottom left, there is a as button for music/playsound
+* An About modal describing the background and rules of the game 
+* A production README Wireframes Homepage Nav links include links to this project's Github repo, my LinkedIn and AngelList, and the About modal. Game controls will include Start, Pause buttons. 
+* On the bottom right, there will be buttons used to choose game level. On the left, there will be a 30s timer (Bonus) On the bottom left, there is a as button for music/playsound
 
 **Technologies, Libraries, APIs**
 
 This project will be implemented with the following technologies:
 
-*The Canvas API to render the game board.
-*Webpack to bundle and transpile the source JavaScript code 
-*npm to manage project dependencies
+* The Canvas API to render the game board.
+* Webpack to bundle and transpile the source JavaScript code 
+* npm to manage project dependencies
 
 **Implementation Timeline**
 
