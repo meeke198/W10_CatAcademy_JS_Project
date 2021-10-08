@@ -23,8 +23,7 @@ This project will be implemented with the following technologies:
 * npm to manage project dependencies
 
 **Implementation Timeline**
-
-[Hien-Nguyen---Wireframe-cc-Premium-2.pdf](https://github.com/meeke198/W10_NinjaCat_JS_Project/files/7313616/Hien-Nguyen---Wireframe-cc-Premium-2.pdf)
+![Homepage](https://user-images.githubusercontent.com/73726226/136612844-06202beb-a9a1-447b-b901-18a357e9a103.png)
 
 **Friday Afternoon & Weekend:** 
 Overview on JS and get comfortable with canvas. 
