@@ -1,10 +1,10 @@
 W10_NinjaCat_JS_Project
 
-#Background
+# Background
 
 It is a cat version of Typer Shark Delux. Players will help the ninjacat learn English by typing out the words appear on the whiteboard. Time set will be 30s each round. There is a scoreboard to update how many words players teache the cat. Cat gets excited when players type proper words. If players cant teach her all the words on whiteboard in 30s, she gets bored and falls asleep. Game is over.
 
-#Functionality & MVPs
+# Functionality & MVPs
 
 **With this NinjaCat's Game, users will be able to:**
 
@@ -14,7 +14,7 @@ It is a cat version of Typer Shark Delux. Players will help the ninjacat learn E
 * A production README Wireframes Homepage Nav links include links to this project's Github repo, my LinkedIn and AngelList, and the About modal. Game controls will include Start, Pause buttons. 
 * On the bottom right, there will be buttons used to choose game level. On the left, there will be a 30s timer (Bonus) On the bottom left, there is a as button for music/playsound
 
-#Technologies, Libraries, APIs
+# Technologies, Libraries, APIs
 
 **This project will be implemented with the following technologies:**
 
@@ -22,7 +22,7 @@ It is a cat version of Typer Shark Delux. Players will help the ninjacat learn E
 * Webpack to bundle and transpile the source JavaScript code 
 * npm to manage project dependencies
 
-#Implementation Timeline
+# Implementation Timeline
 ![Homepage](https://user-images.githubusercontent.com/73726226/136612844-06202beb-a9a1-447b-b901-18a357e9a103.png)
 
 **Friday Afternoon & Weekend:** 
@@ -40,6 +40,6 @@ Get canvas to show up on the screen.
 
 **Thursday Morning:** Deploy to GitHub pages. If time, rewrite this proposal as a production README.
 
-#Bonus features
+# Bonus features
 
 Add multiple choices for starting level that are interesting Music/playsound button
