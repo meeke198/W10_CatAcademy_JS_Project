@@ -18,6 +18,7 @@ In addition, this project will include:
 An About modal describing the background and rules of the game
 A production README
 Wireframes
+
 ![image](https://wireframe.cc/pro/pp/c0e03de31480100)
 
 
