@@ -18,7 +18,7 @@ In addition, this project will include:
 An About modal describing the background and rules of the game
 A production README
 Wireframes
-[Hien-Nguyen---Wireframe-cc-Premium-2.pdf](https://github.com/meeke198/W10_NinjaCat_JS_Project/files/7312684/Hien-Nguyen---Wireframe-cc-Premium-2.pdf)
+![Homepage](https://user-images.githubusercontent.com/73726226/136587968-587b058c-15b0-4b34-9af2-7d6cd1bf07bf.png)
 Nav links include links to this project's Github repo, my LinkedIn and AngelList, and the About modal.
 Game controls will include Start, Pause buttons.
 On the bottom right, there will be buttons used to choose game level.
