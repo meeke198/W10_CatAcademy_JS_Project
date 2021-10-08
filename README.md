@@ -18,7 +18,7 @@ In addition, this project will include:
 An About modal describing the background and rules of the game
 A production README
 Wireframes
-![alt text](https://wireframe.cc/pro/pp/c0e03de31480100)
+![image](https://wireframe.cc/pro/pp/c0e03de31480100)
 
 
 Nav links include links to this project's Github repo, my LinkedIn and AngelList, and the About modal.
