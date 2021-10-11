@@ -43,4 +43,34 @@ span, article, footer, time, small {
 body {
     width: 100vw; /*lay max cai screen hien tai*/
     height: 100vh;
+    background-image: url("asset/icons/background.jpeg");
+    background: #77A1D3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 0px;
+   
+}
+
+.contact img {
+    width: 60px;
+    height: 60px;
+}
+.contact div {
+ padding: 10px;
+}
+
+.game-title {
+    width: 100%;
+  text-align: center;
+  font-family: 'Tourney', cursive;
+  color: #1C7947;
+  font-size: 70px;
+  padding-bottom: 0;
 }

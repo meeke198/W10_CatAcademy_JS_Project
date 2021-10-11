@@ -11,7 +11,7 @@ canvas.style.background = "#999999";
 const boardImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
 boardImg.src = "asset/icons/board.jpeg"
 boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
-ctx.drawImage(boardImg, 400, 600, 2400, 1400)};
+    ctx.drawImage(boardImg, 200, 200, 2800, 1600)};
 
 
 const timerImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
@@ -61,7 +61,7 @@ class Cat {
         this.catImg = new Image(); //
         this.catImg.src = "asset/icons/cat.jpeg";
         this.ctx = ctx; // gan ctx cua canvas cho ctx cua Cat
-        this.posInCanvas = [2400, 2000, 700, 700];
+        this.posInCanvas = [2200, 1800, 900, 1200];
     }
     static type = { //khong xai const/let/var phia ngoai constructor duoc
         "Maddie": [60, 90],
@@ -112,7 +112,7 @@ class Game {
         const boardImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
         boardImg.src = "asset/icons/board.jpeg"
         boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
-            ctx.drawImage(boardImg, 400, 600, 2400, 1400);
+            ctx.drawImage(boardImg, 200, 200, 2800, 1600);
             // that.getTimer(time);
             // ctx.save();
         };
@@ -148,8 +148,8 @@ class Game {
 
         ctx.font = "bold 150px Handlee cursive";
         ctx.fillStyle = "#FEFBF3";
-        ctx.fillText("firstword", 1000, 1000, 1000);
-        ctx.fillText("another word", 1800, 1500, 1000);
+        ctx.fillText("firstword", 800, 800, 1000);
+        ctx.fillText("another word", 1500, 1200, 1000);
     };
 
     getUserInput() {
