@@ -41,7 +41,6 @@ span, article, footer, time, small {
     outline: none;
 }
 body {
-    margin: 0;
     width: 100vw; /*lay max cai screen hien tai*/
     height: 100vh;
 }
