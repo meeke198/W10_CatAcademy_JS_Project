@@ -1,4 +1,4 @@
-W10_NinjaCat_JS_Project
+W10_CatSchool_JS_Project
 
 # Background
 
@@ -27,9 +27,9 @@ It is a cat version of Typer Shark Delux. Players will help the ninjacat learn E
 
 **Friday Afternoon & Weekend:** 
 Overview on JS and get comfortable with canvas. 
+Get asset.
 Setup project, including getting webpack up and running. 
-Create classes. 
-Making the ninjacat animation. 
+Create skeleton and work on index.js, index.html, style.css.
 Get canvas to show up on the screen.
 
 **Monday:** Dedicate this day toward implementing the underlying logic of NinjaCat's Game of Life. Ensure that I can advance a generation of random words on the board appropriately.
@@ -42,4 +42,5 @@ Get canvas to show up on the screen.
 
 # Bonus features
 
-Add multiple choices for starting level that are interesting Music/playsound button
+Two levels of easy and difficult.
+Music/playsound button.
