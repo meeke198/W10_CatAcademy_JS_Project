@@ -95,3 +95,18 @@ document.addEventListener("keydown", function (event) {
         game.start(); //game start khi user nhan bat ky phim nao khac ngoai 123
     }
 })
+
+class Game {
+    constructor(time) {
+        this.time = time;
+        this.text = ["text", "cat"];
+        let that = this;
+        const boardImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
+        boardImg.src = "asset/board.jpeg"
+        boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
+            ctx.drawImage(boardImg, 400, 600, 2400, 1400);
+            // that.getTimer(time);
+            // ctx.save();
+        }
+    }
+};
