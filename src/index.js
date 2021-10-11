@@ -109,4 +109,19 @@ class Game {
             // ctx.save();
         }
     }
+
+    start() {
+        this.ctx.drawTimer();
+        const timer = setInterval(() => {
+            console.log("timer ne")
+            const count = this.time
+            count -= 1;
+            // ctx.clearRect(500, 700, 200, 200);
+            // ctx.restore();
+            // this.getTimer();
+            if (count === 0)
+                    clearInterval(timer);
+                    // alert("gameover");
+        }, 1000);
+    };
 };
