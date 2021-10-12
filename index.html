@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="asset/icons/favicon.ico">
-    <link rel="stylesheet" href="dist/main.css">
+    <link rel="stylesheet" href="src/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Tourney:wght@200&display=swap" rel="stylesheet">
     <title>Cat School</title>
 </head>
@@ -23,8 +23,11 @@
             <img src="asset/icons/contact-modified.png" alt="email-icon">
         </a></div>
     </header>
-    <div id="timer">5</div>
+    
     <h1 class="game-title">Cat School</h1>
+    <div class="nav-bar">
+        <p id="timer">5</p>
+        <p id="timer">Tom learned <span>0</span> words</p></div>
     <div class="canvas">
         <canvas id="canvas">
             
@@ -32,6 +35,13 @@
         <input id="user-input" type="text">
     </div>
 
+    <!-- <div class="pop-up">
+        <div class="introduction">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s.</p>
+            <button>START GAME</button>
+        </div>
+    </div> -->
     <script src="./src/index.js"></script>
 
 </body>

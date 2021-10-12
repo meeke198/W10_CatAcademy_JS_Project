@@ -11,7 +11,7 @@ canvas.style.background = "#999999";
 const boardImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
 boardImg.src = "asset/icons/board.jpeg"
 boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
-    ctx.drawImage(boardImg, 200, 200, 2800, 1600)};
+    ctx.drawImage(boardImg, 200, 200, 2800, 1200)};
 
 // let seconds= 5;
 // let countdown = setInterval(function() {
@@ -25,34 +25,44 @@ boardImg.onload = function () { //cho cai hinh load len het roi moi chay functio
 // timerImg.src = "asset/icons/timer3.jpg"
 // timerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
 // ctx.drawImage(timerImg, 500, 700, 200, 300)};
+// const timerImg = new Image();
+// timerImg.src = "./asset/timer3.jpg"
+// timerImg.onload = function () {
+//     ctx.clearRect(500, 700, 300, 300); //xoa truoc khi ve cai moi
+//     ctx.drawImage(timerImg, 125, 600, 140, 180, 500, 700, 200, 300); //1
+//     ctx.drawImage(timerImg, 285, 600, 140, 180, 500, 700, 200, 300); //2
+//     ctx.drawImage(timerImg, 440, 600, 140, 180, 500, 700, 200, 300); //3
+//     ctx.drawImage(timerImg, 600, 600, 140, 180, 500, 700, 200, 300); // 4
+//     ctx.drawImage(timerImg, 755, 600, 140, 180, 500, 700, 200, 300); //5
 
 // class Timer {
 //     constructor(ctx) {
 //         this.timerImg = new Image(); //
 //         this.timerImg.src = "asset/icons/timer3.jpg";
 //         this.ctx = ctx; // gan ctx cua canvas cho ctx cua timer
-//         this.posInCanvas = [500, 700, 200, 300];
+//         this.posInCanvas = [300, 350, 200, 300];
 //     }
 //     static tick = { //khong xai const/let/var phia ngoai constructor duoc
-//         "5": [125, 600],
-//         "4": [285, 600],
+//         "1": [125, 600],
+//         "2": [285, 600],
 //         "3": [440, 600],
-//         "2": [600, 600],
-//         "1": [755, 600]
+//         "4": [600, 600],
+//         "5": [755, 600]
 //     };
 //     init() { //nam trong class timer => ctx => Cat
 //         console.log("this trong init ne", this); // this = cat
-//         this.TimerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay // this.catImg.onload => ctx = new Image(); = image
+//         this.timerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay // this.catImg.onload => ctx = new Image(); = image
 // //             // ctx.drawImage(catImg, 60, 90, 250, 300, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
 // //             // ctx.drawImage(catImg, 330, 450, 280, 320, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
 // //             // ctx.drawImage(catImg, 330, 770, 280, 270, 1000, 2000, 700, 700); //4 tham so dau: vi tri tren hinh con meo, 4 tham so sau laf vi tri tren canvas
 //             console.log("this trong onload ne", this);
-//             this.ctx.drawImage(this.timerImg, 330, 770, 280, 270, ...this.posArray);
+//             this.drawTimer(Timer.tick["5"]);
 //         }.bind(this); // bind voi cat, vi cat moi co .catImg
 //     }
 
 //     drawTimer(posArray) {
 //         this.clearTimer();
+//         console.log(this);
 //         this.ctx.drawImage(this.timerImg, posArray[0], posArray[1], 140, 180, ...this.posInCanvas);
 //     }
 
@@ -61,7 +71,7 @@ boardImg.onload = function () { //cho cai hinh load len het roi moi chay functio
 //     }
 
 // };
-// const firstTimer = new Timer(ctx);
+
 
 class Cat {
     constructor(ctx) {
@@ -111,18 +121,70 @@ document.addEventListener("keydown", function (event) {
     }
 })
 
+
+
+
 class Game {
-    constructor(time) {
+    constructor(time, ctx) { //rule cua class la khong duoc dung bien global (const = ctx = canvas)
         this.time = time;
-        this.text = ["text", "cat"];
-        let that = this;
+        this.ctx = ctx;
+        // let that = this;
         const boardImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
         boardImg.src = "asset/icons/board.jpeg"
         boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
-            ctx.drawImage(boardImg, 200, 200, 2800, 1600);
-            // that.getTimer(time);
-            // ctx.save();
-        };
+            this.ctx.drawImage(boardImg, 200, 200, 2800, 1200);
+            const firstTimer = new Timer(ctx);
+            firstTimer.init();
+        }.bind(this);
+        // let seconds = 5;
+        // let countdown = setInterval(function () {
+        //     document.getElementById("timer").innerHTML = seconds;
+        //     seconds = seconds - 1;
+        //     if (seconds < 0) {
+        //         clearInterval(countdown);
+        //     }
+        // }, 1000);
+    };
+    static pos = { //pos cua text tren bang den
+        0: [800, 800, 1000],
+        1: [1500, 1200, 1000]
+    };
+    generateText() {
+        this.text = ["text", "cat"];
+        this.ctx.font = "bold 150px Handlee cursive";
+        this.ctx.fillStyle = "#FEFBF3";
+        for(let i = 0; i < this.text.length; i++){
+            this.ctx.fillText(`${this.text[i]}`, ...Game.pos[i]);
+            // ctx.fillText("another word", 1500, 1200, 1000);
+        }
+        
+
+    };
+
+  
+
+    start() {
+        this.generateText();
+        this.getUserInput();
+        // const timer = setInterval(() => {
+        //     // console.log("timer ne")
+        //     const count = this.time;
+        //     this.count -= 1;
+        //     // ctx.clearRect(500, 700, 200, 200);
+        //     // ctx.restore();
+        //     // this.getTimer();
+        //     if (this.count === 4) {
+        //         firstTimer.drawTimer(Timer.tick["4"]);
+        //     } else if (this.count === 3) {
+        //         firstTimer.drawTimer(Timer.tick["3"]);
+        //     } else if (this.count === 2) {
+        //         firstTimer.drawTimer(Timer.tick["2"]);
+        //     } else if (this.count === 1){
+        //         firstTimer.drawTimer(Timer.tick["1"]);
+        //     } else if (this.count === 0){
+        //         this.clearInterval(timer);
+        //     }
+        // }, 1000);
         let seconds = 5;
         let countdown = setInterval(function () {
             document.getElementById("timer").innerHTML = seconds;
@@ -131,35 +193,8 @@ class Game {
                 clearInterval(countdown);
             }
         }, 1000);
-    };
 
-
-    start() {
-        this.getUserInput();
-        const timer = setInterval(() => {
-            // console.log("timer ne")
-            const count = this.time;
-            this.count -= 1;
-            // ctx.clearRect(500, 700, 200, 200);
-            // ctx.restore();
-            // this.getTimer();
-            if (this.count === 4) {
-                firstTimer.drawTimer(Timer.tick["4"]);
-            } else if (this.count === 3) {
-                firstTimer.drawTimer(Timer.tick["3"]);
-            } else if (this.count === 2) {
-                firstTimer.drawTimer(Timer.tick["2"]);
-            } else if (this.count === 1){
-                firstTimer.drawTimer(Timer.tick["1"]);
-            } else if (this.count === 0){
-                this.clearInterval(timer);
-            }
-        }, 1000);
-
-        ctx.font = "bold 150px Handlee cursive";
-        ctx.fillStyle = "#FEFBF3";
-        ctx.fillText("firstword", 800, 800, 1000);
-        ctx.fillText("another word", 1500, 1200, 1000);
+       
     };
 
     getUserInput() {
@@ -167,10 +202,19 @@ class Game {
         userInput.addEventListener("keydown", function (event) {
             event.stopPropagation(); // stop bubbling out (line 29)
             if (event.key === "Enter") {
-                alert("hello, it works!!!")
+                console.log("this ne", this);
+                for(let i = 0; i < this.text.length; i++){
+                    if (this.text[i] === userInput.value) {
+                        this.text.splice(i, 1); //remove trong this.text
+                        this.removeText(i); // remove tren UI
+                        console.log(this.text);
+                        console.log("true");
+                        break;
+                    }
+                }
             }
-        })
+        }.bind(this));
     };
 };
 
-const game = new Game(5);
+const game = new Game(5, ctx);
