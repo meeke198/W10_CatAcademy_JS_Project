@@ -136,19 +136,25 @@ class Game {
             const firstTimer = new Timer(ctx);
             firstTimer.init();
         }.bind(this);
-        // let seconds = 5;
-        // let countdown = setInterval(function () {
-        //     document.getElementById("timer").innerHTML = seconds;
-        //     seconds = seconds - 1;
-        //     if (seconds < 0) {
-        //         clearInterval(countdown);
-        //     }
-        // }, 1000);
     };
+
     static pos = { //pos cua text tren bang den
         0: [800, 800, 1000],
         1: [1500, 1200, 1000]
     };
+
+    removeText(i){
+    // this.ctx.clearRect(Game.pos[i][0], Game.context.beginPath();
+    this.ctx.beginPath();
+    this.ctx.moveTo(Game.pos[i][0], Game.pos[i][1] - 40);
+    this.ctx.lineTo(Game.pos[i][0] + 215, Game.pos[i][1] - 40);
+    this.ctx.lineWidth = 10;
+
+    // set line color
+    this.ctx.strokeStyle = '#ff0000';
+    this.ctx.stroke();
+    }
+    
     generateText() {
         this.text = ["text", "cat"];
         this.ctx.font = "bold 150px Handlee cursive";
