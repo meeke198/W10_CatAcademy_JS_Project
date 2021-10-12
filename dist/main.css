@@ -55,7 +55,6 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     margin: 10px 0px;
-   
 }
 
 .contact img {
@@ -70,7 +69,18 @@ body {
     width: 100%;
   text-align: center;
   font-family: 'Tourney', cursive;
-  color: #1C7947;
+  color: #FF5C58;
   font-size: 70px;
   padding-bottom: 0;
+}
+
+#timer {
+    font-family: 'Handlee', cursive;
+    margin: 0;
+    color: white;
+    background-color: none;
+    display: block;
+    font-size: 50px;
+    height: 70px;
+    width: 50px;
 }

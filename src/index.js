@@ -13,48 +13,55 @@ boardImg.src = "asset/icons/board.jpeg"
 boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
     ctx.drawImage(boardImg, 200, 200, 2800, 1600)};
 
+// let seconds= 5;
+// let countdown = setInterval(function() {
+//     document.getElementById("timer").innerHTML = seconds;
+//     seconds = seconds - 1;
+//     if (seconds < 0){
+//         clearInterval(countdown);
+//     }
+// }, 1000);
+// const timerImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
+// timerImg.src = "asset/icons/timer3.jpg"
+// timerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
+// ctx.drawImage(timerImg, 500, 700, 200, 300)};
 
-const timerImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
-timerImg.src = "asset/icons/timer3.jpg"
-timerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
-ctx.drawImage(timerImg, 500, 700, 200, 300)};
+// class Timer {
+//     constructor(ctx) {
+//         this.timerImg = new Image(); //
+//         this.timerImg.src = "asset/icons/timer3.jpg";
+//         this.ctx = ctx; // gan ctx cua canvas cho ctx cua timer
+//         this.posInCanvas = [500, 700, 200, 300];
+//     }
+//     static tick = { //khong xai const/let/var phia ngoai constructor duoc
+//         "5": [125, 600],
+//         "4": [285, 600],
+//         "3": [440, 600],
+//         "2": [600, 600],
+//         "1": [755, 600]
+//     };
+//     init() { //nam trong class timer => ctx => Cat
+//         console.log("this trong init ne", this); // this = cat
+//         this.TimerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay // this.catImg.onload => ctx = new Image(); = image
+// //             // ctx.drawImage(catImg, 60, 90, 250, 300, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+// //             // ctx.drawImage(catImg, 330, 450, 280, 320, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+// //             // ctx.drawImage(catImg, 330, 770, 280, 270, 1000, 2000, 700, 700); //4 tham so dau: vi tri tren hinh con meo, 4 tham so sau laf vi tri tren canvas
+//             console.log("this trong onload ne", this);
+//             this.ctx.drawImage(this.timerImg, 330, 770, 280, 270, ...this.posArray);
+//         }.bind(this); // bind voi cat, vi cat moi co .catImg
+//     }
 
-class Timer {
-    constructor(ctx) {
-        this.timerImg = new Image(); //
-        this.timerImg.src = "asset/icons/timer3.jpg";
-        this.ctx = ctx; // gan ctx cua canvas cho ctx cua timer
-        this.posInCanvas = [500, 700, 200, 300];
-    }
-    static tick = { //khong xai const/let/var phia ngoai constructor duoc
-        "5": [125, 600],
-        "4": [285, 600],
-        "3": [440, 600],
-        "2": [600, 600],
-        "1": [755, 600]
-    };
-    init() { //nam trong class timer => ctx => Cat
-        console.log("this trong init ne", this); // this = cat
-        this.TimerImg.onload = function () { //cho cai hinh load len het roi moi chay function nay // this.catImg.onload => ctx = new Image(); = image
-//             // ctx.drawImage(catImg, 60, 90, 250, 300, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
-//             // ctx.drawImage(catImg, 330, 450, 280, 320, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
-//             // ctx.drawImage(catImg, 330, 770, 280, 270, 1000, 2000, 700, 700); //4 tham so dau: vi tri tren hinh con meo, 4 tham so sau laf vi tri tren canvas
-            console.log("this trong onload ne", this);
-            this.ctx.drawImage(this.timerImg, 330, 770, 280, 270, ...this.posArray);
-        }.bind(this); // bind voi cat, vi cat moi co .catImg
-    }
+//     drawTimer(posArray) {
+//         this.clearTimer();
+//         this.ctx.drawImage(this.timerImg, posArray[0], posArray[1], 140, 180, ...this.posInCanvas);
+//     }
 
-    drawTimer(posArray) {
-        this.clearTimer();
-        this.ctx.drawImage(this.timerImg, posArray[0], posArray[1], 140, 180, ...this.posInCanvas);
-    }
+//     clearTimer() {
+//         this.ctx.clearRect(...this.posInCanvas);
+//     }
 
-    clearTimer() {
-        this.ctx.clearRect(...this.posInCanvas);
-    }
-
-};
-const firstTimer = new Timer(ctx);
+// };
+// const firstTimer = new Timer(ctx);
 
 class Cat {
     constructor(ctx) {
@@ -116,11 +123,14 @@ class Game {
             // that.getTimer(time);
             // ctx.save();
         };
-        // const timerImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
-        // timerImg.src = "asset/icons/timer3.jpeg"
-        // timerImg.onload = function () {
-        //     ctx.drawImage(timerImg, 500, 700, 200, 300);
-        // }
+        let seconds = 5;
+        let countdown = setInterval(function () {
+            document.getElementById("timer").innerHTML = seconds;
+            seconds = seconds - 1;
+            if (seconds < 0) {
+                clearInterval(countdown);
+            }
+        }, 1000);
     };
 
 
