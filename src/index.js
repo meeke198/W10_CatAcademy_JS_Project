@@ -85,12 +85,12 @@ class Game {
         this.text = (randomWords(2));
         this.boardImg = new Image(); // khong xai const se thanh global, khong can xai this vi khong can xai o cho khac
         this.boardImg.src = "asset/icons/board.jpeg"
-        this.boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
-            this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
-            firstCat.drawCat(Cat.type["Suzanne"]);
-            // const firstTimer = new Timer(ctx);
-            // firstTimer.init();
-        }.bind(this);
+        // this.boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
+        //     this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
+        //     firstCat.drawCat(Cat.type["Suzanne"]);
+        //     // const firstTimer = new Timer(ctx);
+        //     // firstTimer.init();
+        // }.bind(this);
     };
 
     static pos = { //pos cua text tren bang den
@@ -168,18 +168,45 @@ class Game {
         }.bind(this), 1000);
     }
     nextLevel(){
-        this.text = (randomWords(2));
         clearInterval(this.countdown);
-        this.start();
+        this.text = (randomWords(2));
+        this.generateText();
+        this.timer();
     }
+
+
     endGame(){
         console.log("end game");
+        let popupEnd = document.getElementById("popupEnd")
+        popupEnd.style.display = 'flex'; //flex thi moi center both side
+        let scores = document.getElementById("scoreEnd");
+        scores.innerHTML = this.score; //this.score = updated scores trong constructor
+        let tryagainButton = document.getElementById("end")
+        tryagainButton.addEventListener("click", function(event){
+            popupEnd.style.display = 'none'; //hide popup
+            this.restartGame();
+        }.bind(this));
+
     }
     start() {
-        this.generateText();
-        this.getUserInput();
-        this.timer();
+        this.boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
+            this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
+            firstCat.drawCat(Cat.type["Suzanne"]);
+            this.score = 0;
+            this.generateText();
+            this.getUserInput();
+            this.timer();
+        }.bind(this);
     };
+
+    restartGame(){  //restart score
+        this.text = this.text.map(e => undefined);
+        this.score = 0;
+        setScore(this.score);
+        this.text = (randomWords(2));
+        this.draw();
+        this.timer();
+    }
 
     getUserInput() {
 
@@ -214,13 +241,19 @@ function setScore(score){
     let scores = document.getElementById("score");
     scores.innerHTML = score;
 };
-// let userInput = document.getElementById("user-input");
-// userInput.addEventListener("keydown", function (event) {
-//     console.log("this ne", this)
-//     if (event.key = "Enter") {
-//         return userInput.forEach(input => input.value = '');
-//     }
-// });
+
+
+function startGame() {
+    const game = new Game(5, ctx);
+    game.start();
+    let popupStart = document.getElementById('popupStart');
+    popupStart.style.display = 'none';
+};
+
+let startButton = document.getElementById("start");
+    startButton.addEventListener("click", function (event) {
+    startGame();
+});
 
 // document.addEventListener("keydown", callback); 
 // function callback(e){
@@ -228,8 +261,8 @@ function setScore(score){
 // };
 const firstCat = new Cat(ctx);
 console.log(firstCat);
-const game = new Game(5, ctx);
 
-document.addEventListener("keydown", function() {
-    game.start();
-})
+
+// document.addEventListener("keydown", function() {
+//     game.start();
+// })
