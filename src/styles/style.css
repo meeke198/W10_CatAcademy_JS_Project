@@ -83,7 +83,7 @@ body {
     color: white;
     background-color: none;
     display: block;
-    font-size: 50px;
+    font-size: 30px;
     height: 70px;
     width: 50px;
     text-align: center;
@@ -113,3 +113,11 @@ body {
     height: 620px;
     background-color: #D1E8E4; 
 }
+
+/* .highlight{
+    background-color: aquamarine;
+} */
+
+/* .done {
+    background-color: gainsboro;
+} */
