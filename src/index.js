@@ -133,8 +133,9 @@ class Game {
         this.boardImg.src = "asset/icons/board.jpeg"
         this.boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
             this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
-            const firstTimer = new Timer(ctx);
-            firstTimer.init();
+            firstCat.drawCat(Cat.type["Suzanne"]);
+            // const firstTimer = new Timer(ctx);
+            // firstTimer.init();
         }.bind(this);
     };
 
@@ -152,6 +153,7 @@ class Game {
     draw(){
         this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
         this.generateText();
+        firstCat.drawCat(Cat.type["Suzanne"]);
     }; 
 
     generateText() {
