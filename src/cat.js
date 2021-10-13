@@ -13,9 +13,6 @@ module.exports = class Cat {
     init() { //nam trong class CAt => ctx => Cat
         console.log("this inside init", this); // this = cat
         this.catImg.onload = function () { //cho cai hinh load len het roi moi chay function nay // this.catImg.onload => ctx = new Image(); = image
-            // ctx.drawImage(catImg, 60, 90, 250, 300, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
-            // ctx.drawImage(catImg, 330, 450, 280, 320, 1000, 2000, 700, 700); //image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
-            // ctx.drawImage(catImg, 330, 770, 280, 270, 1000, 2000, 700, 700); //4 tham so dau: vi tri tren hinh con meo, 4 tham so sau laf vi tri tren canvas
             console.log("this trong onload ne", this);
             this.ctx.drawImage(this.catImg, 330, 770, 280, 270, ...this.posArray);
         }.bind(this); // bind voi cat, vi cat moi co .catImg

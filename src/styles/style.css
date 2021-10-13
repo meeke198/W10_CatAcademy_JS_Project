@@ -53,6 +53,7 @@ body {
     background: #77A1D3;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
 }
 
 .contact {
@@ -60,7 +61,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 10px 0px;
+    padding: 0px 10px;
+    margin-top: 0px;
 }
 
 .contact img {
@@ -85,7 +87,7 @@ body {
     color: white;
     background-color: none;
     display: block;
-    font-size: 30px;
+    font-size: 40px;
     height: 50px;
     width: 100%;
     text-align: center;
@@ -93,7 +95,7 @@ body {
 }
 .nav-bar{
     display: flex;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 0;
     width: 100%;
     flex-direction: row;
@@ -101,7 +103,8 @@ body {
 }
 
 #popupStart, #popupEnd{
-    background-image: url("../../asset/icons/cat7.jpeg");
+    /* background-image: url("../../asset/icons/cat7.jpeg"); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../asset/icons/cat7.jpeg');
     height: 100%;
     width: 100%;
     position: absolute;
@@ -110,15 +113,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; /* center chieu ngang*/
-    /* position: fixed; /* Stay in place */
-    /* z-index: 1; /* Sit on top */
-    /* left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    /*height: 100%; /* Full height
-    overflow: hidden; /*Enable scroll if needed */
-    /* background-color: rgb(0,0,0); /* Fallback color */
-    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */ */ */ */
+    padding: 20px 20px;
 }
 
 #popupEnd{
@@ -128,14 +123,68 @@ body {
 #end, #start {
     width: 200px;
     height: 40px;
-    background-color: gainsboro;
+    margin-top: 50px;
+    text-align: center;
+    background-color: #39A6A3;
+    cursor: pointer;
+    font-weight: bold;
 }
 .introduction, .endGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 560px;
     height: 620px;
     background-color: #D1E8E4;
 }
+.endGame{
+    background-color: #F0D9E7;
+}
 
+#start:hover{
+    background-color: #5F939A;
+}
+#end:hover{
+    background-color: #5F939A;
+}
+.introduction > p {
+    padding: 50px 25px;
+    color: #7952B3;
+    font-size: 30px;
+    text-align: center;
+    /* padding-left: 30px; */
+}
+#popup-title {
+    margin-top: 50px;
+    font-size: 60px;
+    font-family:'Finger Paint', cursive;
+    color: #DF5E5E;
+    /* font-family:'Coiny', cursive; */
+}
+
+.demonstration {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.demonstration-img {
+    height: 50px;
+    width: 80px;
+}
+
+.demonstration p {
+    font-size: 25px;
+    color: #7952B3;
+    padding-right: 20px;
+}
+
+.endGame p {
+    padding: 50px 25px;
+    color: #7952B3;
+    font-size: 30px;
+    text-align: center;
+}
 /* .highlight{
     background-color: aquamarine;
 } */
