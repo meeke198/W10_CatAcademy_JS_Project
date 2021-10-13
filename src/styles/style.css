@@ -43,6 +43,9 @@ span, article, footer, time, small {
     outline: none;
 }
 body {
+    font-family: 'Handlee', cursive;
+    letter-spacing: 1px;
+    font-size: 20px;
     width: 100vw; /*lay max cai screen hien tai*/
     height: 100vh;
     position: relative;
@@ -78,7 +81,6 @@ body {
 }
 
 .nav-bar p {
-    font-family: 'Handlee', cursive;
     margin: 0;
     color: white;
     background-color: none;
@@ -99,15 +101,24 @@ body {
 }
 
 #popupStart, #popupEnd{
-    background-image: url("../../asset/icons/background3.jpeg");
-    height: 100vh;
-    width: 100vw;
+    background-image: url("../../asset/icons/cat7.jpeg");
+    height: 100%;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center; /* center chieu ngang*/
+    /* position: fixed; /* Stay in place */
+    /* z-index: 1; /* Sit on top */
+    /* left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    /*height: 100%; /* Full height
+    overflow: hidden; /*Enable scroll if needed */
+    /* background-color: rgb(0,0,0); /* Fallback color */
+    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */ */ */ */
 }
 
 #popupEnd{
