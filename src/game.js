@@ -105,7 +105,6 @@ module.exports = class Game {
     }
     start() {
         clearUserInput();
-        // this.backgroundMusic();
         this.boardImg.onload = function () { 
             this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
             this.firstCat.drawCat(Cat.type["Suzanne"]);
