@@ -15,9 +15,10 @@ module.exports = class Game {
     };
 
     static pos = { //pos cua text tren bang den
-        0: [800, 600, 1000],
+        0: [1000, 500, 1000],
         1: [1500, 1200, 1000],
-        2: [2200, 800, 1000]
+        2: [2200, 800, 1000],
+        3: [800, 1000, 1000]
     };
 
 
@@ -31,31 +32,18 @@ module.exports = class Game {
         this.ctx.font = "bold 150px Handlee cursive";
         this.ctx.fillStyle = "#FEFBF3";
         for (let i = 0; i < this.text.length; i++) {
-            // console.log(this.text[i]);
             if (this.text[i] != undefined) {
                 console.log(this.text[i]);
                 this.ctx.fillText(`${this.text[i]}`, ...Game.pos[i]);
-                // ctx.fillText("another word", 1500, 1200, 1000);
             }
         }
     };
 
-    backgroundMusic() {
-        let sound = new Audio("asset/icons/Monkeys-Spinning-Monkeys.mp3");
+    meow() {
+        let sound = new Audio("asset/icons/meow2.m4a");
         sound.play();
     };
 
-    removeText(i) {
-        // this.ctx.clearRect(Game.pos[i][0], Game.context.beginPath();
-        this.ctx.beginPath();
-        this.ctx.moveTo(Game.pos[i][0], Game.pos[i][1] - 40);
-        this.ctx.lineTo(Game.pos[i][0] + 215, Game.pos[i][1] - 40);
-        this.ctx.lineWidth = 10;
-
-        // set line color
-        this.ctx.strokeStyle = '#ff0000';
-        this.ctx.stroke();
-    }
 
     // gameloop = (timeStamp) => {
     //     lastime = timeStamp;
@@ -79,6 +67,9 @@ module.exports = class Game {
         this.countdown = setInterval(function () {
             document.getElementById("timer").innerHTML = seconds;
             seconds = seconds - 1;
+            if (seconds === 1) {
+                this.firstCat.drawCat(Cat.type["Maddie"]);
+            }
             if (seconds < 0) {
                 clearInterval(this.countdown);
                 this.checkGame();
@@ -90,8 +81,10 @@ module.exports = class Game {
         if (this.score < 2) {
             this.text = (randomWords(2));
         } else {
+            this.firstCat.drawCat(Cat.type["Matt"]);
+            // this.meow();
             this.text = (randomWords(3));
-        }
+        };
         this.generateText();
         this.timer();
     }
@@ -100,9 +93,9 @@ module.exports = class Game {
     endGame() {
         console.log("end game");
         let popupEnd = document.getElementById("popupEnd")
-        popupEnd.style.display = 'flex'; //flex thi moi center both side
+        popupEnd.style.display = 'flex'; //flex to center both side
         let scores = document.getElementById("scoreEnd");
-        scores.innerHTML = this.score; //this.score = updated scores trong constructor
+        scores.innerHTML = this.score; //this.score = updated scores in constructor
         let tryagainButton = document.getElementById("end")
         tryagainButton.addEventListener("click", function (event) {
             popupEnd.style.display = 'none'; //hide popup
@@ -112,7 +105,7 @@ module.exports = class Game {
     }
     start() {
         clearUserInput();
-        this.boardImg.onload = function () { //cho cai hinh load len het roi moi chay function nay
+        this.boardImg.onload = function () { 
             this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
             this.firstCat.drawCat(Cat.type["Suzanne"]);
             this.score = 0;
@@ -143,6 +136,7 @@ module.exports = class Game {
                 for (let i = 0; i < this.text.length; i++) {
                     if (this.text[i] === userInput.value) {
                         this.score += 1;
+                        // this.clearUserInput();
                         setScore(this.score);
                         console.log(this.score);
                         this.text[i] = undefined; //remove in this.text

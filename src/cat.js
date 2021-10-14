@@ -5,17 +5,17 @@ module.exports = class Cat {
         this.ctx = ctx; // gan ctx cua canvas cho ctx cua Cat
         this.posInCanvas = [2000, 1400, 900, 1200];
     }
-    static type = { //khong xai const/let/var phia ngoai constructor duoc
+    static type = { 
         "Maddie": [60, 90],
         "Matt": [330, 450],
         "Suzanne": [330, 750]
     };
-    init() { //nam trong class CAt => ctx => Cat
-        console.log("this inside init", this); // this = cat
-        this.catImg.onload = function () { //cho cai hinh load len het roi moi chay function nay // this.catImg.onload => ctx = new Image(); = image
+    init() { 
+        console.log("this inside init", this); 
+        this.catImg.onload = function () { //wait to load img before running this function 
             console.log("this trong onload ne", this);
-            this.ctx.drawImage(this.catImg, 330, 770, 280, 270, ...this.posArray);
-        }.bind(this); // bind voi cat, vi cat moi co .catImg
+            this.ctx.drawImage(this.catImg, 330, 770, 280, 270, ...this.posArray); nay // catImg.onload => ctx = new Image(); = image
+        }.bind(this); // bind with cat, cat has .catImg
     }
 
     drawCat(posArray) {
