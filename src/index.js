@@ -15,7 +15,6 @@ startButton.addEventListener("click", function (event) {
 
 function startGame(ctx) {
     const firstCat = new Cat(ctx);
-    console.log(firstCat);
     const game = new Game(5, ctx, firstCat);
     game.start();
     let popupStart = document.getElementById('popupStart');

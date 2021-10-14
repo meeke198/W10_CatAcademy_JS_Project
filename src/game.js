@@ -33,7 +33,6 @@ module.exports = class Game {
         this.ctx.fillStyle = "#FEFBF3";
         for (let i = 0; i < this.text.length; i++) {
             if (this.text[i] != undefined) {
-                console.log(this.text[i]);
                 this.ctx.fillText(`${this.text[i]}`, ...Game.pos[i]);
             }
         }
@@ -76,7 +75,6 @@ module.exports = class Game {
 
 
     endGame() {
-        console.log("end game");
         let popupEnd = document.getElementById("popupEnd")
         popupEnd.style.display = 'flex'; //flex to center both side
         let scores = document.getElementById("scoreEnd");
@@ -117,15 +115,12 @@ module.exports = class Game {
         userInput.addEventListener("keydown", function (event) {
             event.stopPropagation(); // stop bubbling out (line 29)
             if (event.key === "Enter") {
-                console.log("event ne", event);
                 for (let i = 0; i < this.text.length; i++) {
                     if (this.text[i] === userInput.value) {
                         this.score += 1;
                         setScore(this.score);
                         console.log(this.score);
                         this.text[i] = undefined; //remove in this.text
-                        console.log(this.text);
-                        console.log("true")
                         userInput.value = '';
                         this.draw();
                     }
