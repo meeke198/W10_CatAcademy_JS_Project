@@ -105,7 +105,7 @@ body {
     align-items: center;
 }
 
-#popupStart, #popupEnd{
+#popupStart, #popupEnd {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../asset/icons/cat7.jpeg');
     height: 100%;
     width: 100%;
@@ -115,13 +115,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; /* center chieu ngang*/
-    padding: 20px 20px;
+    padding: 0px 20px;
 }
-
 #popupEnd{
     display: none;
 }
-
 #end, #start {
     width: 250px;
     height: 40px;
@@ -181,7 +179,7 @@ body {
 }
 
 .endGame p {
-    padding: 50px 25px;
+    padding: 20px 25px;
     color: #7952B3;
     font-size: 30px;
     text-align: center;
@@ -194,10 +192,4 @@ body {
     text-align: center;
     font-size: 15px;
     color: #6E7582;
-}
-
-#confused-cat{
-    height: 50px;
-    width: 50px;
-    float: inline-start;
 }
