@@ -40,3 +40,7 @@ Get canvas to show up on the screen.
 **Wednesday:** Finish implementing user controls, and focus on styling, as well as implementing the different color schemes and nav links. If time, start on bonuses.
 
 **Thursday Morning:** Deploy to GitHub pages. If time, rewrite this proposal as a production README.
+**Bonus:**
+Cat's reaction: happy, worried, excited.
+5s timer set for each time words are renders. 
+It gets harder by render more words on the board.

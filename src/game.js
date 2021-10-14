@@ -38,22 +38,7 @@ module.exports = class Game {
             }
         }
     };
-
-    // backgroundMusic() {
-    //     let sound = new Audio("asset/icons/background.m4a");
-    //     sound.play();
-    // };
-    
-
-
-    // gameloop = (timeStamp) => {
-    //     lastime = timeStamp;
-    //     game.getUserInput();
-    //     game.draw();
-    //     requestAnimationFrame(gameloop);
-
-    // }
-    // requestAnimationFrame(gameloop);
+  
     checkGame() {
         if (this.text.some(e => e)) {
             this.endGame();
@@ -136,7 +121,6 @@ module.exports = class Game {
                 for (let i = 0; i < this.text.length; i++) {
                     if (this.text[i] === userInput.value) {
                         this.score += 1;
-                        // this.clearUserInput();
                         setScore(this.score);
                         console.log(this.score);
                         this.text[i] = undefined; //remove in this.text
