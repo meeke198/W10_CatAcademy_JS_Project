@@ -24,7 +24,7 @@ It is a cat version of Typer Shark Delux. Players will help the cats learn Engli
 * npm random-words package to render random words on the game board.
 
 # Implementation Timeline
-![Homepage](https://wireframe.cc/pro/pp/c0e03de31480100)
+![Homepage](/Users/hienthu/Documents/aA-projects/M3/W10_CatAcademy_JsProject/asset/icons/Homepage-2.png)
 
 **Friday Afternoon & Weekend:** 
 Overview on JS and get comfortable with canvas. 
