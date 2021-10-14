@@ -193,3 +193,8 @@ body {
     font-size: 15px;
     color: #6E7582;
 }
+
+#end-score{
+    font-weight: bold;
+    color: #DF5E5E;
+}

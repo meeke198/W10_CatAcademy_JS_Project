@@ -39,10 +39,11 @@ module.exports = class Game {
         }
     };
 
-    meow() {
-        let sound = new Audio("asset/icons/meow2.m4a");
-        sound.play();
-    };
+    // backgroundMusic() {
+    //     let sound = new Audio("asset/icons/background.m4a");
+    //     sound.play();
+    // };
+    
 
 
     // gameloop = (timeStamp) => {
@@ -82,7 +83,6 @@ module.exports = class Game {
             this.text = (randomWords(2));
         } else {
             this.firstCat.drawCat(Cat.type["Matt"]);
-            // this.meow();
             this.text = (randomWords(3));
         };
         this.generateText();
@@ -105,6 +105,7 @@ module.exports = class Game {
     }
     start() {
         clearUserInput();
+        // this.backgroundMusic();
         this.boardImg.onload = function () { 
             this.ctx.drawImage(this.boardImg, 200, 200, 2800, 1200);
             this.firstCat.drawCat(Cat.type["Suzanne"]);
