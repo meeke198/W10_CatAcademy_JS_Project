@@ -1,4 +1,4 @@
-W10_CatSchool_JS_Project
+W10_CatAcademy_JS_Project
 
 # Background
 
