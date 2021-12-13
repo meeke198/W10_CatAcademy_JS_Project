@@ -1,5 +1,4 @@
 let {clearUserInput, setScore} = require('./helper')
-console.log(clearUserInput, setScore);
 let randomWords = require('random-words');
 let Cat = require('./cat')
 module.exports = class Game {
@@ -119,7 +118,6 @@ module.exports = class Game {
                     if (this.text[i] === userInput.value) {
                         this.score += 1;
                         setScore(this.score);
-                        console.log(this.score);
                         this.text[i] = undefined; //remove in this.text
                         userInput.value = '';
                         this.draw();

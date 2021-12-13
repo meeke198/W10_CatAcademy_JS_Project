@@ -11,9 +11,7 @@ module.exports = class Cat {
         "Suzanne": [330, 750]
     };
     init() { 
-        console.log("this inside init", this); 
-        this.catImg.onload = function () { //wait to load img before running this function 
-            console.log("this trong onload ne", this);
+        this.catImg.onload = function () { //wait to load img before running this function       
             this.ctx.drawImage(this.catImg, 330, 770, 280, 270, ...this.posArray); nay // catImg.onload => ctx = new Image(); = image
         }.bind(this); // bind with cat, cat has .catImg
     }
