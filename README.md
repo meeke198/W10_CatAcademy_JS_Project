@@ -2,7 +2,7 @@ W10_CatAcademy_JS_Project
 
 # Background
 
-It is a cat version of Typer Shark Delux. Players will help the cats learn English by typing out all words appear on the board. Time set will be 5s each time words are rendered. The game will get harder by render more words on the board. There is a scoreboard to update how many words players taught the cats. Cats gets excited when players type proper words. If players cant teach them all the words randomed on board in 5s, she gets bored and falls asleep. Game is over.
+Cat Academy is a cat version of Typer Shark Deluxe. Players will help the cats learn English by typing out all words that appear on the board. Time set will be 5s each time words are rendered. The game will get harder by rendering more words on the board. There is a scoreboard to update how many words players taught the cats. Cats get excited when players type proper words. If players can't teach them all the words randomed on board in 5s, she gets bored and falls asleep. Game is over.
 
 # Functionality & MVPs
 
