@@ -137,6 +137,7 @@ body {
     width: 560px;
     height: 620px;
     background-color: #D1E8E4;
+    border-radius: 15px;
 }
 .endGame{
     background-color: #F0D9E7;
