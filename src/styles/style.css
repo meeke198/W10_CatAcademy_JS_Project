@@ -138,6 +138,7 @@ body {
     height: 620px;
     background-color: #D1E8E4;
     border-radius: 15px;
+    
 }
 .endGame{
     background-color: #F0D9E7;
@@ -154,6 +155,8 @@ body {
     color: #7952B3;
     font-size: 30px;
     text-align: center;
+    
+
 }
 #popup-title {
     margin-top: 50px;
